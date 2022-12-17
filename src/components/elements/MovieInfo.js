@@ -1,11 +1,11 @@
-import React from 'react';
+import React from "react";
 import "react-bootstrap-carousel/dist/react-bootstrap-carousel.css";
-import NoImage from '../images/no_image.jpg';
-import { IMAGE_BASE_URL, POSTER_SIZE } from '../../config';
+import NoImage from "../images/no_image.jpg";
+import { IMAGE_BASE_URL, POSTER_SIZE } from "../../config";
 
-import MovieThumb from './MovieThumb';
+import MovieThumb from "./MovieThumb";
 
-import { StyledMovieInfo } from '../styles/StyledMovieInfo';
+import { StyledMovieInfo } from "../styles/StyledMovieInfo";
 
 const MovieInfo = ({ movie }) => (
   <StyledMovieInfo backdrop={movie.backdrop_path}>
@@ -37,15 +37,17 @@ const MovieInfo = ({ movie }) => (
             <div className="score">{movie.vote_average}</div>
           </div>
           <div className="director">
-            <h3>DIRECTOR{movie.directors.length > 1 ? 'S' : ''}</h3>
-            {movie.directors.map(element => (
+            <h3>DIRECTOR{movie.directors.length > 1 ? "S" : ""}</h3>
+            {movie.directors.map((element) => (
               <p key={element.credit_id}>{element.name}</p>
             ))}
           </div>
-          <div className='release'>
-          <h3 style={{ color: "#ffffff", fontWeight: "bolder" }}><b>RELEASE DATE</b></h3>
+        </div>
+        <div>
+          <h3 style={{ color: "#ffffff", fontWeight: "bolder" }}>
+            <b>RELEASE DATE</b>
+          </h3>
           <p style={{ color: "#ffffff" }}>{movie.release_date}</p>
-          </div>
         </div>
       </div>
     </div>
